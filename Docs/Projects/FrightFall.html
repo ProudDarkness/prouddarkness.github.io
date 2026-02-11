@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Burgetton</title>
+  <title>Portfolio Details - iPortfolio Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -28,7 +28,7 @@
   <link href="../assets/css/main.css" rel="stylesheet">
 
   <!-- =======================================================
-  * Template Name: Website
+  * Template Name: Docs
   * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
   * Updated: Jun 29 2024 with Bootstrap v5.3.3
   * Author: BootstrapMade.com
@@ -139,27 +139,17 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="../assets/img/Burguetton/MainMenu.png" alt="">
+                  <img src="../assets/img/FrightFall/FrightFallLogo.png" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="../assets/img/Burguetton/SettingsMenu.png" alt="">
+                  <img src="../assets/img/FrightFall/FrightFallSplines.png" alt="">
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="../assets/img/Burguetton/Tricatvisor.png" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="../assets/img/Burguetton/ClientsAndBackground.png" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="../assets/img/Burguetton/Minigame_wires.png" alt="">
-                </div>
 <!--                <div class="swiper-slide">-->
-<!--                  <img src="../assets/img/Submarine/Submarine_map.jpg" alt="">-->
+<!--                  <img src="../assets/img/FrightFall" alt="">-->
 <!--                </div>-->
+
 
               </div>
               <div class="swiper-pagination"></div>
@@ -171,138 +161,47 @@
               <h3>Project information</h3>
               <ul>
 <!--                <li><strong>Category</strong>: Web design</li>-->
-                <li><strong>Category</strong>: Gamejam project</li>
-                <li><strong>Project date</strong>: 2024</li>
-<!--                <li><strong>Project URLs</strong>: <a href="https://github.com/antony0lopezmtz/SUBMARINO-RV" target="__blank">Github</a></li>-->
+                <li><strong>Category</strong>: GameJam</li>
+                <li><strong>Project date</strong>: 27 Oct, 2024</li>
+                <li><strong>Project URL</strong>: <a href="https://mrwhitenoiz.itch.io/frightfall" target="__blank">https://mrwhitenoiz.itch.io/frightfall</a></li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>My roles in the game</h2>
+              <h2>My role in Fright Fall</h2>
               <p>
-                Burgetton was developed for Virtual Core Jam with the theme "Only one button".
+                Fright Fall is a short horror game where you play as a detective investigating mysterious disappearances in a theme park.
+                You will embark on a terror <a href="https://en.wikipedia.org/wiki/Dark_ride " target="_blank">dark ride</a> and search the facilities for clues.
               </p>
               <p>
-                I did all the character interactions and movement, the dialogue and localization systems, the mini-game and the client path-finding.
-                I also designed and implemented both the menu and the scoring. Lastly, I wrote the dialogue and translations, and composed a piece for the old menu.
+                I was in charge of programming everything related to the actual ride, the backbone of the game. I also was responsible for the settings.
               </p>
             </div>
           </div>
           <div class="col-lg-16" data-aos="fade-up" data-aos-delay="200">
 <!--            <img src="assets/img/services.jpg" alt="" class="img-fluid services-img">-->
-            <h3>Side note</h3>
+            <h3>Roller-coaster</h3>
             <p>
-              Burgetton was originally made for a gamejam, and therefore had flaws that could not be solved in time. Recently, I came back and fixed some of these, namely the menu, the lack of localization, and how empty it felt.
+              Originally, the game would allow you to travel between different stops, allowing the player to choose the stop, and even to go backwards (that's why there's a button pad in-game).
+              Even though the feature exists, since it's a gamejam game, it went unused in favour of a more controlled and less ambitious story.
             </p>
-            <h3>The programming</h3>
+            <h5>Making the path</h5>
             <p>
-              Perhaps one of the most interesting aspects of Burgetton, for me, is the minigame. Gameplay-wise it's very simple, you just connect the wires with the right colours.
-              But on the programming side, we needed a somewhat realistic cable simulation to go with it.
-              Since this was a gamejam there was no time to implement a physics simulation (not to mention it would've been an overkill). Therefore, I decided to implement it as a parametrized cosine function.
-            </p>
-            <div>
-              <math display="block">
-                <mtable>
-                  <mtr>
-                    <mtd></mtd>
-                    <mtd>
-                      <mi>y</mi><mo>=</mo>
-                      <mrow>
-                        <mo>cos</mo><mo>(</mo>
-                        <mfrac>
-                          <mrow>
-                            <mi>P</mi><mo>·</mo><mi>π</mi>
-                          </mrow>
-                          <mrow><msub><mi>O</mi><mi>x</mi></msub></mrow>
-                        </mfrac>
-                        <mo>+</mo>
-                        <mfrac>
-                          <mi>π</mi>
-                          <mi>2</mi>
-                        </mfrac>
-                        <mo>)</mo>
-                      </mrow>
-                      <!--                END OF COSINE           -->
-                      <mrow>
-                        <mo>·</mo>
-                        <mfrac>
-                          <mrow><mo>|</mo><mi>d</mi><mo>|</mo></mrow>
-                          <mi>h</mi>
-                        </mfrac>
-                        <mo>+</mo>
-                        <mrow>
-                          <mfrac>
-                            <mrow>
-                              <mi>P</mi>
-                              <mo>·</mo>
-                              <msub><mi>d</mi><mi>y</mi></msub>
-                            </mrow>
-                            <msub><mi>d</mi><mi>x</mi></msub>
-                          </mfrac>
-                        </mrow>
-                        <mo>+</mo>
-                        <msub>
-                          <mi>O</mi><mi>y</mi>
-                        </msub>
-                      </mrow>
-                    </mtd>
-                  </mtr>
-                  <mtr><mtd></mtd></mtr>
-                  <mtr mathcolor="grey">
-                    <mtd>
-                      <mi>O</mi><mo>=</mo><mtext>Origin</mtext>
-                    </mtd>
-                    <mtd>
-                      <mi>D</mi><mo>=</mo><mtext>End</mtext><mo>-</mo><mtext>Origin</mtext>
-                    </mtd>
-                    <mtd>
-                      <mi>P</mi><mo>=</mo><mi>x</mi><mo>-</mo><msub><mi>O</mi><mi>x</mi></msub>
-                    </mtd>
-                    <mtd>
-                      <mi>h</mi><mo>=</mo><mi>7</mi>
-                      <mo>·</mo>
-                      <mrow><mo>|</mo><mi>d</mi><mo>|</mo></mrow>
-                    </mtd>
-                  </mtr>
-                </mtable>
-              </math>
-            </div>
-            <br>
-            <p>
-              The menu emulates a book. It uses an animator that changes to the specified page through an animation parameter.
-              This is useful to move to open at specific pages, such as not opening the main menu during gameplay.
+                Thanks to Unity's spline system, the path can be easily expanded on. The main path exists on a spline, and multiple splines can be connected to knots to create alternative paths.
+              Knots also lets us define where the cart should stop, and even control the speed of the ride.
             </p>
             <p>
-              For the dialogue, I wrote a dialogue system that takes in a list of text and can call functions with each dialogue entry.
-              In the final game this feature is only used to start the game after the last line.
+              To move through the splines, we use the CurveUtility class. While it might be tempting to directly interpolate positions with EvaluatePosition,
+              that wouldn't work on curves, since they don't change linearly. Before that, we have to get an accurate interpolation value through CurveUtility.GetDistanceToInterpolation
+              to ensure we are moving equal distances each frame.
             </p>
+            <h5>Player riding and aiming</h5>
             <p>
-              I implemented the localization with Unity's own localization system.
-            </p>
-            <h3>The art</h3>
-            <h5>User interface</h5>
-            <p>
-              For Burgetton, my intention was meshing the UI with the game, as that's not only more interesting for the player, but more immersive too.
-              Since in the game you take the role of an underpaid fast food worker, it made sense that the "lives" of the player would be the restaurant's online ratings.
-              Particularly, the site parodies Tripadvisor, turning the owl logo into a cat.
-            </p>
-            <p>In the same vein, I turned the game menu into a restaurant menu.
-              Each part is divided in sections reminiscent of a diner's menu, and the main one is made after a 2-courses meal.
-              Below there's a comparison of the original menu and my updated one.
-            </p>
-<!--            <div class="row-cols-2">-->
-            <div style="display: flex; object-fit: contain">
-              <img src="../assets/img/Burguetton/Old/OldMainMenu.png" alt="" style="object-fit: contain; overflow: hidden">
-              <img src="../assets/img/Burguetton/MainMenu2.png" alt="" style="object-fit: contain; overflow: hidden">
-              <!--              <img src="../assets/img/Burguetton/Old/OldSettingsMenu.png" alt="" style="object-fit: contain ;flex: auto">-->
-            </div>
-            <br>
-            <h5>More art</h5>
-            <p>
-              In the original game, the food-truck lived in a barren grey wasteland, something that had to be fixed for the update
-              I modelled a little park, with fences, gates, trees, bushes, and even a fountain, and surrounded it with buildings. I kept them simple, like the food-truck was.
-             </p>
-            <p>
-              The only thing truly missing from the update, is the tune I made for the old main menu.
+                In theory, to make the player ride the roller-coaster, we just need to make it a child of the cart. Unfortunately, this comes at the price of gamefeel
+              During the attraction segments of the game, the player is expected to shoot at targets throughout the scenery.
+              If the player always follows the rotation of the cart, aiming during curves makes it feel like something is pulling the camera away.
+              To solve this, I implemented a system that only rotated the player's camera when the player isn't rotating it horizontally.
+              With this custom rotation, the camera doesn't change pitch with the cart. This change made sudden drops of the cart more noticeable and impactful,
+              since the cart won't stay in the same relative position in the screen. It's specially helpful in dark spaces, where other frames of reference are limited.
             </p>
           </div>
         </div>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - iPortfolio Bootstrap Template</title>
+  <title>Crab Mail</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -28,7 +28,7 @@
   <link href="../assets/css/main.css" rel="stylesheet">
 
   <!-- =======================================================
-  * Template Name: Website
+  * Template Name: Docs
   * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
   * Updated: Jun 29 2024 with Bootstrap v5.3.3
   * Author: BootstrapMade.com
@@ -139,19 +139,23 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="../assets/img/FrightFall/FrightFallLogo.png" alt="">
+                  <img src="../assets/img/CrabMail/logoCrabMail.png" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="../assets/img/FrightFall/FrightFallSplines.png" alt="">
+                  <img src="../assets/img/CrabMail/CrabMailmenuPrincipal.png" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="../assets/img/FrightFall" alt="">
+                  <img src="../assets/img/CrabMail/CrabMailregistro.png" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="../assets/img/portfolio/books-1.jpg" alt="">
+                  <img src="../assets/img/CrabMail/CrabMailchat.png" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="../assets/img/CrabMail/CrabMailAjustes.png" alt="">
                 </div>
 
               </div>
@@ -163,49 +167,45 @@
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
               <h3>Project information</h3>
               <ul>
-<!--                <li><strong>Category</strong>: Web design</li>-->
-                <li><strong>Category</strong>: GameJam</li>
-                <li><strong>Project date</strong>: 27 Oct, 2024</li>
-                <li><strong>Project URL</strong>: <a href="https://mrwhitenoiz.itch.io/frightfall" target="__blank">https://mrwhitenoiz.itch.io/frightfall</a></li>
+                <li><strong>Project type</strong>: Web game, online and local multiplayer</li>
+                <li><strong>Category</strong>:University project</li>
+                <li><strong>Project date</strong>:2023</li>
+                <li><strong>Project URLs</strong>: <a href="https://github.com/MarioGonzalezM/jer_crab-mail/tree/main" target="__blank">GitHub</a>,
+                  <a href="https://toroidev.itch.io/crab-mail" target="__blank">Itchio</a></li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>My role in Fright Fall</h2>
+              <h2>My roles in Crabmail</h2>
               <p>
-                Fright Fall is a short horror game where you play as a detective investigating mysterious disappearances in a theme park.
-                You will embark on a terror <a href="https://en.wikipedia.org/wiki/Dark_ride " target="_blank">dark ride</a> and search the facilities for clues.
+                CrabMail is a multiplayer webgame about two crabs working against the clock at a seaside post office.
               </p>
               <p>
-                I was in charge of programming everything related to the actual ride, the backbone of the game. I also was responsible for the settings.
+                I programmed the java server that handled log-ins, online chat and online multiplayer. I coded several in-game interactions, cleaned up, simplified and bugfixed the code.
+                Lastly, I designed and implemented the main, settings and account menus, and the chat tab.
               </p>
             </div>
           </div>
           <div class="col-lg-16" data-aos="fade-up" data-aos-delay="200">
 <!--            <img src="assets/img/services.jpg" alt="" class="img-fluid services-img">-->
-            <h3>Roller-coaster</h3>
-            <p>
-              Originally, the game would allow you to travel between different stops, allowing the player to choose the stop, and even to go backwards (that's why there's a button pad in-game).
-              Even though the feature exists, since it's a gamejam game, it went unused in favour of a more controlled and less ambitious story.
-            </p>
-            <h5>Making the path</h5>
-            <p>
-                Thanks to Unity's spline system, the path can be easily expanded on. The main path exists on a spline, and multiple splines can be connected to knots to create alternative paths.
-              Knots also lets us define where the cart should stop, and even control the speed of the ride.
-            </p>
-            <p>
-              To move through the splines, we use the CurveUtility class. While it might be tempting to directly interpolate positions with EvaluatePosition,
-              that wouldn't work on curves, since they don't change linearly. Before that, we have to get an accurate interpolation value through CurveUtility.GetDistanceToInterpolation
-              to ensure we are moving equal distances each frame.
-            </p>
-            <h5>Player riding and aiming</h5>
-            <p>
-                In theory, to make the player ride the roller-coaster, we just need to make it a child of the cart. Unfortunately, this comes at the price of gamefeel
-              During the attraction segments of the game, the player is expected to shoot at targets throughout the scenery.
-              If the player always follows the rotation of the cart, aiming during curves makes it feel like something is pulling the camera away.
-              To solve this, I implemented a system that only rotated the player's camera when the player isn't rotating it horizontally.
-              With this custom rotation, the camera doesn't change pitch with the cart. This change made sudden drops of the cart more noticeable and impactful,
-              since the cart won't stay in the same relative position in the screen. It's specially helpful in dark spaces, where other frames of reference are limited.
-            </p>
+            <div>
+              <h3>The programming</h3>
+              <p>
+                CrabMail is a multiplayer HTML5 game developed using Phaser. The backend was made via SpringBoot with AJAX for chat messages and websockets for gameplay.
+                The server allows for several concurrent matches. There's also a simple account system to save high-scores. It implements registering, log-in and account deletion.
+              </p>
+              <p>
+                I worked in all the features mentioned. Besides, I cleaned up redundant code and fixed bugs from colleagues.
+              </p>
+              <br><h3>The art</h3>
+              <p>
+                On top of coding, I was in charge of the menu and logo art. I believe that in-game menus should be as immersive as possible, to avoid taking the player out of the experience.
+                That's why, I opted out of generic box menus and themed them around the game. I also made little animations to keep the menus dynamic.
+              </p>
+<!--                          <img src="../assets/img/CrabMail/name" alt="" class="img-fluid services-img">-->
+              <video loop class="img-fluid services-img" autoplay muted>
+                <source src="../assets/img/CrabMail/SettingsMenu.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
 
