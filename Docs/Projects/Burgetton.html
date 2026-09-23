@@ -9,8 +9,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../assets/img/favicon.png" rel="icon">
-  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="../assets/img/Zoodem/Night.png" rel="icon">
+<!--  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -26,6 +26,7 @@
 
   <!-- Main CSS File -->
   <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/additional.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Docs
@@ -55,7 +56,7 @@
   <div class="social-links text-center">
 <!--    <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>-->
     <a href="https://itch.io/profile/prouddarkness" target="__blank" class="facebook">
-      <img src="assets/img/itchio_logo_white.png" alt="" style="width: 16px;">
+      <img src="../assets/img/itchio_logo_white.png" alt="" style="width: 16px;">
     </a>
     <!--      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>-->
     <!--      <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>-->
@@ -81,6 +82,7 @@
           <!--            </li>-->
           <li><a href="FrightFall.html">Fright fall</a></li>
           <li><a href="Doodem.html">Doodem</a></li>
+            <li><a href="Zoodem.html">Zoodem</a></li>
           <li><a href="CrabMail.html">CrabMail</a></li>
           <li><a href="Burgetton.html">Burgetton</a></li>
           <li><a href="MissileRally.html">Missile Rally</a></li>
@@ -100,11 +102,11 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
+        <h1 class="mb-2 mb-lg-0">Burgetton</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="../../index.html">Home</a></li>
-            <li class="current">Portfolio Details</li>
+            <li class="current">Burgetton</li>
           </ol>
         </nav>
       </div>
@@ -138,6 +140,18 @@
 
               <div class="swiper-wrapper align-items-center">
 
+                  <div class="swiper-slide">
+                      <img src="../assets/img/Burguetton/Logo_long.png" alt="">
+                  </div>
+
+                <div class="swiper-slide">
+                  <img src="../assets/img/Burguetton/ClientsAndBackground.png" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="../assets/img/Burguetton/Tricatvisor.png" alt="">
+                </div>
+
                 <div class="swiper-slide">
                   <img src="../assets/img/Burguetton/MainMenu.png" alt="">
                 </div>
@@ -147,19 +161,12 @@
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="../assets/img/Burguetton/Tricatvisor.png" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="../assets/img/Burguetton/ClientsAndBackground.png" alt="">
-                </div>
-
-                <div class="swiper-slide">
                   <img src="../assets/img/Burguetton/Minigame_wires.png" alt="">
                 </div>
-<!--                <div class="swiper-slide">-->
-<!--                  <img src="../assets/img/Submarine/Submarine_map.jpg" alt="">-->
-<!--                </div>-->
+
+                <div class="swiper-slide">
+                  <img src="../assets/img/Burguetton/Dialogue_english.png" alt="">
+                </div>
 
               </div>
               <div class="swiper-pagination"></div>
@@ -193,7 +200,8 @@
             <p>
               Burgetton was originally made for a gamejam, and therefore had flaws that could not be solved in time. Recently, I came back and fixed some of these, namely the menu, the lack of localization, and how empty it felt.
             </p>
-            <h3>The programming</h3>
+            <h3>THE PROGRAMING</h3>
+            <h5>Minigame</h5>
             <p>
               Perhaps one of the most interesting aspects of Burgetton, for me, is the minigame. Gameplay-wise it's very simple, you just connect the wires with the right colours.
               But on the programming side, we needed a somewhat realistic cable simulation to go with it.
@@ -225,7 +233,7 @@
                       <mrow>
                         <mo>·</mo>
                         <mfrac>
-                          <mrow><mo>|</mo><mi>d</mi><mo>|</mo></mrow>
+                          <mrow><mo>|</mo><mi>D</mi><mo>|</mo></mrow>
                           <mi>h</mi>
                         </mfrac>
                         <mo>+</mo>
@@ -260,7 +268,7 @@
                     <mtd>
                       <mi>h</mi><mo>=</mo><mi>7</mi>
                       <mo>·</mo>
-                      <mrow><mo>|</mo><mi>d</mi><mo>|</mo></mrow>
+                      <mrow><mo>|</mo><mi>D</mi><mo>|</mo></mrow>
                     </mtd>
                   </mtr>
                 </mtable>
@@ -278,32 +286,118 @@
             <p>
               I implemented the localization with Unity's own localization system.
             </p>
-            <h3>The art</h3>
-            <h5>User interface</h5>
+            <h5>Tools and client movement</h5>
             <p>
-              For Burgetton, my intention was meshing the UI with the game, as that's not only more interesting for the player, but more immersive too.
-              Since in the game you take the role of an underpaid fast food worker, it made sense that the "lives" of the player would be the restaurant's online ratings.
-              Particularly, the site parodies Tripadvisor, turning the owl logo into a cat.
+              In Burgetton, clients move from and to the truck from random parts of the ‘city’.
+              <br>
+              In order to keep the client movement organic, I created a graph that maps the city, and a custom unity tool
+              to easily manage it. The food truck can have up to 3 clients at once. When one leaves, another one
+              spawns out of sight and uses the graph to look for a path to the truck. Since the path is meant to be kept
+              organic, the client looks for the shortest path with a bit of randomness added. The client that exits the
+              truck also finds a path, but to a designed exit node. Once a path is chosen, the client uses Unity’s pathfinding
+              to visit, in order, each of the nodes of the path. This is useful to avoid obstacles on the path, such as other clients.
             </p>
-            <p>In the same vein, I turned the game menu into a restaurant menu.
-              Each part is divided in sections reminiscent of a diner's menu, and the main one is made after a 2-courses meal.
-              Below there's a comparison of the original menu and my updated one.
+            <p>
+              The custom graph tool was made with ease of use, simplicity and speed in mind. Connecting or disconnecting
+              2 nodes is as easy as selecting 2 of them with the pointer and pressing C (connect) or B (break) in your
+              keyboard. The tool has an option to enable or disable directional gizmos to avoid unnecessary clutter.
+            </p>
+            <figure>
+              <div style="display: flex; object-fit: contain">
+                <img src="../assets/img/Burguetton/Graphtool/GraphTool_topdown.png" alt="" style="object-fit: contain; overflow: hidden">
+                <!--              <img src="../assets/img/Burguetton/Old/OldSettingsMenu.png" alt="" style="object-fit: contain ;flex: auto">-->
+              </div>
+              <figcaption>Graph for the client movement</figcaption>
+            </figure>
+            <p>
+              On the visual side, each node type has a colour coded halo around it; Blue means normal, black is an exit node,
+              and yellow means it’s a food-truck node. Unselected nodes will be white on the inside and selected ones, red.
+            </p>
+            <figure>
+              <div style="display: flex; object-fit: contain">
+                <img src="../assets/img/Burguetton/Graphtool/NodeBlue.png" alt="" style="object-fit: contain; overflow: hidden">
+                <img src="../assets/img/Burguetton/Graphtool/NodeBlack.png" alt="" style="object-fit: contain; overflow: hidden">
+                <img src="../assets/img/Burguetton/Graphtool/NodeYellow.png" alt="" style="object-fit: contain; overflow: hidden">
+              </div>
+              <figcaption>Different node types (normal, exit and food-truck respectively)</figcaption>
+            </figure>
+            The nodes’ height doesn’t matter, since there’s only one ground level, the clients will ignore the Y coordinate
+            of the nodes. Therefore, each node has an indicator representing its position at the ground level.
+            <figure>
+              <div style="display: flex; object-fit: contain">
+                <img src="../assets/img/Burguetton/Graphtool/NodeUp.png" alt="" style="object-fit: contain; overflow: hidden">
+                <img src="../assets/img/Burguetton/Graphtool/NodeSelected.png" alt="" style="object-fit: contain; overflow: hidden">
+              </div>
+              <figcaption>Indicator of position at the ground level</figcaption>
+            </figure>
+            <BR><BR>
+
+            <h3>THE ART AND UI</h3>
+            For Burgetton, and most UIs I design, my goal is integrating it diegetically with the game as much as possible,
+            to maximise immersion and make it memorable.
+            <h5>Game menu</h5>
+            <p>
+              Original game-jam game featured a simple but rushed menu. I changed it into an in-game menu, mimicking a restaurant menu,
+              playing with the double meaning of the word.
             </p>
 <!--            <div class="row-cols-2">-->
-            <div style="display: flex; object-fit: contain">
-              <img src="../assets/img/Burguetton/Old/OldMainMenu.png" alt="" style="object-fit: contain; overflow: hidden">
-              <img src="../assets/img/Burguetton/MainMenu2.png" alt="" style="object-fit: contain; overflow: hidden">
-              <!--              <img src="../assets/img/Burguetton/Old/OldSettingsMenu.png" alt="" style="object-fit: contain ;flex: auto">-->
-            </div>
-            <br>
-            <h5>More art</h5>
-            <p>
-              In the original game, the food-truck lived in a barren grey wasteland, something that had to be fixed for the update
-              I modelled a little park, with fences, gates, trees, bushes, and even a fountain, and surrounded it with buildings. I kept them simple, like the food-truck was.
-             </p>
-            <p>
-              The only thing truly missing from the update, is the tune I made for the old main menu.
+            <figure>
+              <div style="display: flex; object-fit: contain">
+                <img src="../assets/img/Burguetton/Old/OldMainMenu.png" alt="" style="object-fit: contain; overflow: hidden">
+                <img src="../assets/img/Burguetton/MainMenu2.png" alt="" style="object-fit: contain; overflow: hidden">
+                <!--              <img src="../assets/img/Burguetton/Old/OldSettingsMenu.png" alt="" style="object-fit: contain ;flex: auto">-->
+              </div>
+              <FIGCAPTION>Old menu vs my updated menu</FIGCAPTION>
+            </figure>
+
+            <p>It consists of a small booklet with different pages for game title, main menu, options and credits.
+              The player can use the corresponding buttons to move to specific sections, or manually change pages, clicking on the pages' borders.
+              During gameplay, the booklet is locked to the settings menu.
             </p>
+            <p>
+              Especial care has been put into each section to make it look out of a real menu.
+              It has fingerprints that change how light reflects on it, and it’s physically opened/closed when used.
+            </p>
+            <h5>Lives</h5>
+            <p>
+              Instead of traditional lives, I opted for a diegetic in-game alternative, showing them as a restaurant reviews.
+              To that end, I parodied a business reviewing platform, most specifically TripAdvisor, changing the iconic owl to a cat.
+            </p>
+            <figure>
+              <div style="display: flex; object-fit: contain">
+                <img src="../assets/img/Burguetton/Tricatvisor.png" alt="" style="object-fit: contain; overflow: hidden">
+                <!--              <img src="../assets/img/Burguetton/Old/OldSettingsMenu.png" alt="" style="object-fit: contain ;flex: auto">-->
+              </div>
+              <FIGCAPTION>Player lives as a reviewer site, visible on a TV screen</FIGCAPTION>
+            </figure>
+            <br>
+            <h5>3D art</h5>
+            <p>
+              In the original game, the food-truck lived in a barren grey wasteland.
+              Since the player is expected to be looking out of the window for half of the game, I added a park for visual
+              flare, and building facades to stop view-lines and extra immersion.
+              I kept a simple style, similar to the one that already existed for the food-truck interior.
+             </p>
+
+            <h5>Music</h5>
+            <p>
+              I composed a piece for the original main menu, but it got removed alongside it.
+            </p>
+          </div>
+          <div>
+              <h3>Writing and localising</h3>
+              <p>
+                  I wrote the introductory monologue that your boss gives you at the start of the game, as a tutorial.
+                  For the game’s update, I also localised said monologue, and all the texts, to English.
+              </p>
+              <figure>
+                  <div style="display: flex; object-fit: contain">
+                      <img src="../assets/img/Burguetton/Dialogue_english.png" alt="" style="object-fit: contain; overflow: hidden">
+                      <img src="../assets/img/Burguetton/Dialogue_spanish.png" alt="" style="object-fit: contain; overflow: hidden">
+                      <!--              <img src="../assets/img/Burguetton/Old/OldSettingsMenu.png" alt="" style="object-fit: contain ;flex: auto">-->
+                  </div>
+                  <FIGCAPTION>Dialogues in Spanish (left) and English (right)</FIGCAPTION>
+              </figure>
           </div>
         </div>
 

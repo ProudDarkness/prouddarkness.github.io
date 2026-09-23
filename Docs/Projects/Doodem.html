@@ -9,8 +9,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../assets/img/favicon.png" rel="icon">
-  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="../assets/img/Zoodem/Night.png" rel="icon">
+<!--  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -26,6 +26,7 @@
 
   <!-- Main CSS File -->
   <link href="../assets/css/main.css" rel="stylesheet">
+    <link href="../assets/css/additional.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Docs
@@ -55,7 +56,7 @@
     <div class="social-links text-center">
       <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
         <a href="https://itch.io/profile/prouddarkness" target="__blank" class="facebook">
-            <img src="assets/img/itchio_logo_white.png" alt="" style="width: 16px;">
+            <img src="../assets/img/itchio_logo_white.png" alt="" style="width: 16px;">
         </a>
 <!--      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>-->
 <!--      <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>-->
@@ -81,6 +82,7 @@
 <!--            </li>-->
             <li><a href="FrightFall.html">Fright fall</a></li>
             <li><a href="Doodem.html">Doodem</a></li>
+              <li><a href="Zoodem.html">Zoodem</a></li>
             <li><a href="CrabMail.html">CrabMail</a></li>
             <li><a href="Burgetton.html">Burgetton</a></li>
             <li><a href="MissileRally.html">Missile Rally</a></li>
@@ -100,11 +102,11 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
+        <h1 class="mb-2 mb-lg-0">Doodem</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="../../index.html">Home</a></li>
-            <li class="current">Portfolio Details</li>
+            <li class="current">Doodem</li>
           </ol>
         </nav>
       </div>
@@ -185,29 +187,66 @@
           </div>
           <div class="col-lg-16" data-aos="fade-up" data-aos-delay="200">
 <!--            <img src="assets/img/services.jpg" alt="" class="img-fluid services-img">-->
-            <h3>Game design</h3>
-            <p>
-              I actively took part in the design of the core parts of the game, specially at the beginning.
-            </p>
+            <h3>THE GAME DESIGN</h3>
             <h5>The totems</h5>
-            <p>
-                We wanted each body-part to be different. For example, the main attack is bound to the head, in order to prevent combinations without one.
-              Then, the body is the only way to get a flying animal (not only does it make sense biologically,but also avoids the redundancy of having the effect twice).
-              It also is, generally, the most stat-heavy segment. Lastly, the rear of the animals have abilities that can't deal damage.
-            </p>
-            <h3>Animals: AI and attacks</h3>
-            <p>
-              The animals are controlled by an <i>Entity</i> class, that manages decision-making, attacking, resources, etc.
-              <br>
-              Since each individual piece has different priorities (such as, what resources to pick up), the "brain" was implemented as a utility system, where each part has an input.
-              This allows for more complex, or even emergent behaviours, while making the system easy to expand with new pieces and unique objectives.
-              <br><br>
-              For special abilities and attacks, the part can subscribe, through the Entity, to events of interest.
-              This way, the piece will be notified of relevant changes (acquiring/using resources, death, killing an enemy, etc.) and act accordingly.
-              On the other hand, each part can submit an attack to the entity, with a callback and an attack distance. When the required distances are adequate, the Entity will process them.
+              <p>
+                I took part in the early design of the game, until I had to shift my focus to coding.
+                We wanted to make an auto-battler from the start. In order to add depth and replayability to the game
+                we decided to make the troops combinable, since the number of combinations grows exponentially.
+              </p>
+              <p>
+                We settled for 3 body-parts, since it’s both a reasonable amount of pieces, and a good way to divide a body.
+                The idea was to make each part fill a role. On the one hand, this avoids redundancies and ensures every combination has something interesting. For example:
+              </p>
+                <ul>
+                    <li>Every head has an attack. This prevents combinations without actions.</li>
+                    <li>The flight trait is exclusive to the body.</li>
+                    <li>The body normally has the highest health stats, which helps with balancing when mixing parts.</li>
+                    <li>The rears’ abilities don’t deal damage.</li>
+                </ul>
+              <p>
+                One more thing we had to consider when designing the game was it had to be accessible to PC and mobile devices, since it was a requirement of the university project.
+            </p><br>
 
-            </p>
-            <h3>Multiplayer and webgame</h3>
+            <h3>THE PROGRAMMING</h3>
+              <H5>Backend</H5>
+              <p>
+                  The other programmer and I worked hand in hand in the multiplayer,
+                  through Unity’s NGO and remote procedural calls (RPCs).
+                  The multiplayer features are the synchronisation of the animals,
+                  terrain elements and the current game phase and status.
+              </p>
+              <h5>The totems</h5>
+              <p>
+                  On the store it’s possible to buy totem pieces and biomes.
+                  The information for each is stored as Scriptable objects.
+                  You can mix totem pieces in any way, as long as each totem only has 1 of each body part.
+                  Incomplete totems won’t be playable. Each totem is a class that stores the 3 parts.
+                  An external class handles the body-part dragging and exchanging parts between totems.
+                  Body-parts that aren’t part of a totem actually are totems that don’t accept new parts.
+                  Thanks to this, they can be implemented without extra code.
+              </p>
+                <h5>Animals and Animal AI</h5>
+              <p>
+                  Connecting bodyparts of different animals when the totems transform might seem complex at first.
+                  Fortunately, we can lean on the “action figure” look of the creatures. We can accomplish that by defining
+                  anchor/attachment points (empty unity transforms) where each part is meant to connect with the others.
+                  Then, we align said points when creating the creature.
+              </p>
+              <p>
+                  When making the animal AI I had to take into account that:
+                <ul>
+                    <li>Different body parts with different attacks and abilities can be on the same body</li>
+                    <li>Different abilities need recollecting resources in order to be used.</li>
+                </ul>
+              <p>
+                  My solution was making each body-part with attacks and abilities subscribe to the animal brain,
+              and tell it it’s requirements (needed resources, attack speed, range, etc.).
+              Then, the brain chooses an objective based on proximity to resources and enemies, and calls the abilities when applicable.
+              That way, the brain doesn’t need to know how any ability or attack is implemented, and each ability and attack can exist without knowing anything about the others.
+                  This makes the system easily expandable with new pieces and abilities.
+              </p>
+            <h5>Multiplayer and webgame</h5>
             <p>
                 Doodem uses Unity's <i>NetCode for GameObjects</i> (NGO) for the multiplayer. Special attention was put in synchronising the game-state (resources).
             </p>
@@ -216,6 +255,30 @@
               We had to account for the smaller screen size for smartphones, both on the amount of info shown, and specially the ways to interact with the game.
               Another aspect was the lower capabilities of web-based games, although the impact was more noticeable for the 3D art team.
             </p>
+              <h5>Other</h5>
+              <p>Using the scriptable objects, I programmed an information system that shows stats, item name and description,
+                  and a flavour text. Additionally, it highlights keywords (such as status effects and resource names) automatically.
+                  <br>
+                  Since each section is modular, it can show 1-3 items at the same time.
+              </p>
+              <figure>
+                  <div style="display: flex; object-fit: contain">
+                      <img src="../assets/img/Doodem/GlacierFlavourText.png" alt="" style="object-fit: contain; overflow: hidden">
+                      <img src="../assets/img/Doodem/BearFlavourTexts.png" alt="" style="object-fit: contain; overflow: hidden">
+                  </div>
+                  <figcaption>Information system for 1 and 3 items</figcaption>
+              </figure>
+              <br>
+
+              <h3>FLAVOUR TEXTS</h3>
+              <P>I researched interesting pieces of information about each animal, one per body-part, that are displayed
+                  alongside their stats. These tidbits add some flair and polish to the game.</P>
+              <figure>
+                  <div style="display: flex; object-fit: contain">
+                      <img src="../assets/img/Doodem/BearFlavourTexts.png" alt="" style="object-fit: contain; overflow: hidden">
+                  </div>
+                  <figcaption>Flavour text for the European brown bear</figcaption>
+              </figure>
           </div>
         </div>
 

@@ -9,8 +9,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../assets/img/favicon.png" rel="icon">
-  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../assets/img/Zoodem/Night.png" rel="icon">
+<!--  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -26,6 +26,7 @@
 
   <!-- Main CSS File -->
   <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/additional.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Docs
@@ -55,7 +56,7 @@
   <div class="social-links text-center">
 <!--    <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>-->
     <a href="https://itch.io/profile/prouddarkness" target="__blank" class="facebook">
-      <img src="assets/img/itchio_logo_white.png" alt="" style="width: 16px;">
+      <img src="../assets/img/itchio_logo_white.png" alt="" style="width: 16px;">
     </a>
     <!--      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>-->
     <!--      <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>-->
@@ -81,6 +82,7 @@
           <!--            </li>-->
           <li><a href="FrightFall.html">Fright fall</a></li>
           <li><a href="Doodem.html">Doodem</a></li>
+          <li><a href="Zoodem.html">Zoodem</a></li>
           <li><a href="CrabMail.html">CrabMail</a></li>
           <li><a href="Burgetton.html">Burgetton</a></li>
           <li><a href="MissileRally.html">Missile Rally</a></li>
@@ -100,11 +102,11 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
+        <h1 class="mb-2 mb-lg-0">Crab Mail</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="../../index.html">Home</a></li>
-            <li class="current">Portfolio Details</li>
+            <li class="current">Crab Mail</li>
           </ol>
         </nav>
       </div>
@@ -188,23 +190,40 @@
           <div class="col-lg-16" data-aos="fade-up" data-aos-delay="200">
 <!--            <img src="assets/img/services.jpg" alt="" class="img-fluid services-img">-->
             <div>
-              <h3>The programming</h3>
+              <h3>THE PROGRAMMING</h3>
+              <h5>Backend</h5>
               <p>
-                CrabMail is a multiplayer HTML5 game developed using Phaser. The backend was made via SpringBoot with AJAX for chat messages and websockets for gameplay.
-                The server allows for several concurrent matches. There's also a simple account system to save high-scores. It implements registering, log-in and account deletion.
+                I wrote the game’s server in Java, with SpringBoot. It can handle several concurrent games, and will end matches
+                where a player disconnects for a certain amount of time. It implements registering, log-in and account deletion.
+                We made a simple account system, that stores a high score for each logged-in player.
+                I also worked on the client side, using AJAX to communicate with the server.
+                <BR>
+                It’s worth noting that online features don’t work on the itchio release of the game, since there’s no server currently running.
               </p>
+              <BR>
+              <H5>Other</H5>
               <p>
                 I worked in all the features mentioned. Besides, I cleaned up redundant code and fixed bugs from colleagues.
               </p>
-              <br><h3>The art</h3>
+              <br><h3>THE ART</h3>
               <p>
-                On top of coding, I was in charge of the menu and logo art. I believe that in-game menus should be as immersive as possible, to avoid taking the player out of the experience.
-                That's why, I opted out of generic box menus and themed them around the game. I also made little animations to keep the menus dynamic.
+                I was in charge of the UI. That means I designed, drew and implemented the main menu, login page, chat,
+                settings and pause menus. They were all designed with immersion in mind, which means they’re beach themed.
+                An exception is the pause menu, represented by envelopes instead, drawing from the other theme of the game.
+                Notably, the settings menu features a small animation of crabs walking on sand, which represent the sliders.
+                On top of the menus, I was also the designer of the game’s logo. It uses a crab claw to represent the letter
+                 C on top of an envelope.
               </p>
 <!--                          <img src="../assets/img/CrabMail/name" alt="" class="img-fluid services-img">-->
-              <video loop class="img-fluid services-img" autoplay muted>
-                <source src="../assets/img/CrabMail/SettingsMenu.mp4" type="video/mp4">
-              </video>
+              <figure>
+                <div style="display: flex; object-fit: contain">
+                  <video loop  autoplay muted style="object-fit: contain; overflow: hidden">
+                    <source src="../assets/img/CrabMail/SettingsMenu.mp4" type="video/mp4">
+                  </video>
+                  <img src="../assets/img/CrabMail/CrabMailmenuPrincipal.png" alt="" style="object-fit: contain; overflow: hidden">
+                </div>
+                <figcaption>Settings and main menu</figcaption>
+              </figure>
             </div>
           </div>
         </div>
